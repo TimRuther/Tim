@@ -2,7 +2,7 @@
 session_start();
 
 // E-Mail Adresse, an die die Nachrichten gesendet werden sollen
-$to = "bekati@me.com"; // Ersetze dies durch deine E-Mail-Adresse
+$to = "Ruther.Tim1@gmail.com"; // Ersetze dies durch deine E-Mail-Adresse
 
 // Überprüfen, ob der Benutzer bereits heute eine E-Mail gesendet hat
 $currentDate = date('Y-m-d');
