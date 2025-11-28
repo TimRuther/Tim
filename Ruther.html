@@ -3,58 +3,482 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tim Ruther | Digital Creative</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Tim Ruther | Ingenieurwesen trifft auf Leidenschaft</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
+    
+    <style>
+        :root {
+            --primary-color: #1a1a1a; /* Dunkle Schrift / Hintergrund-Akzent */
+            --accent-color: #007bff;  /* Helle/Mittel Akzentfarbe (wie Blau) */
+            --background-color: #ffffff; /* Weißer, sauberer Hintergrund */
+            --text-color: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        /* Hilfsklasse für Layout-Begrenzung */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 5%;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .main-nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .main-nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- HERO SECTION (Asymmetrisch) --- */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Asymmetrische Aufteilung */
+            gap: 50px;
+            align-items: flex-start;
+            min-height: 70vh;
+            padding: 80px 5% 100px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .hero-text-content {
+            max-width: 600px;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #666;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--primary-color);
+            color: var(--background-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: #444;
+            transform: translateY(-2px);
+        }
+
+        /* Kurzinfo-Karten */
+        .hero-visual {
+            padding-top: 50px; /* Vertikaler Ausgleich */
+        }
+
+        .stat-card {
+            background-color: #f5f5f5; /* Heller grauer Hintergrund */
+            padding: 25px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        /* --- PROJECT SHOWCASE --- */
+        .project-showcase {
+            padding: 100px 5%;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .project-showcase h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 Spalten Standard */
+            gap: 30px;
+        }
+
+        /* Spezifisches Grid-Layout */
+        .project-lg {
+            grid-column: span 2; /* Nimmt die volle Breite ein */
+            min-height: 450px;
+        }
+
+        .project-sm {
+            min-height: 300px;
+        }
+
+        .project-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Inhalt am unteren Rand */
+            padding: 30px;
+            background-color: #e8e8e8; /* Grauer Platzhalter für Bilder */
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--background-color); 
+            /* Beispiel für ein dunkles Bild-Overlay: */
+            background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project-item:hover {
+            transform: scale(1.02); /* Leichter Vergrößerungseffekt */
+        }
+
+        .project-tag {
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .all-work {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .all-work a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-section {
+            padding: 100px 5%;
+            background-color: #f5f5f5;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .about-content h3 {
+             font-size: 1.6rem;
+             margin-top: 25px;
+             margin-bottom: 10px;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* --- FOOTER / CONTACT & FORM --- */
+        .main-footer {
+            padding: 80px 5%;
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Oben ausrichten */
+        }
+
+        .footer-contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .email-link {
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+            display: block;
+            margin-bottom: 25px;
+        }
+
+        .email-link:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-links a {
+            margin-left: 20px;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Kontaktformular Styling */
+        .contact-form {
+            width: 45%;
+            max-width: 500px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #444;
+        }
+
+        .form-message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            background-color: #e6ffe6;
+            color: #008000;
+            border: 1px solid #008000;
+        }
+
+        .form-message.error {
+            background-color: #ffe6e6;
+            color: #cc0000;
+            border: 1px solid #cc0000;
+        }
+
+
+        /* --- RESPONSIVITÄT --- */
+        @media (max-width: 992px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding-top: 50px;
+            }
+            
+            .hero-section h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-visual {
+                padding-top: 0;
+                display: flex;
+                gap: 20px;
+            }
+            
+            .stat-card {
+                flex: 1;
+            }
+            
+            .main-footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-contact {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .contact-form {
+                width: 100%;
+                max-width: 100%;
+                order: 2; /* Formular unter die Links */
+            }
+            
+            .footer-links {
+                margin-bottom: 20px;
+            }
+
+            .footer-links a {
+                margin: 0 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .main-nav {
+                margin-top: 15px;
+            }
+            
+            .main-nav a {
+                margin-left: 0;
+                margin-right: 20px;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-lg {
+                grid-column: span 1;
+            }
+            
+            .project-item {
+                min-height: 250px;
+            }
+            
+            .hero-visual {
+                flex-direction: column;
+            }
+        }
+    </style>
+    </head>
 <body>
 
     <header class="main-header">
-        <div class="logo">TR</div>
+        <div class="logo">Tim Ruther</div>
         <nav class="main-nav">
-            <a href="#work">Arbeit</a>
-            <a href="#about">Über</a>
+            <a href="#about">Über mich</a>
+            <a href="#work">Projekte</a>
             <a href="#contact">Kontakt</a>
         </nav>
     </header>
 
     <section id="hero" class="hero-section">
         <div class="hero-text-content">
-            <p class="tagline">Kreativer Entwickler & UI/UX Enthusiast</p>
-            <h1>Ich baue digitale Erlebnisse, die **funktionieren** und **begeistern**.</h1>
-            <a href="#work" class="cta-button">Meine Projekte →</a>
+            <p class="tagline">Ingenieurwesen trifft auf digitale Ästhetik</p>
+            <h1>Ich verbinde **analytische Exzellenz** mit kreativen Lösungen.</h1> 
+            <p>Als Absolvent der TUM mit Auszeichnung im Abitur und Erfahrung in der Industrie (Knorr-Bremse) nutze ich strukturiertes Denken, um innovative Projekte zu realisieren.</p>
+            <a href="#about" class="cta-button">Mehr über meinen Werdegang →</a>
         </div>
         
         <div class="hero-visual">
-            <div class="stat-card">
-                <h3>+5 Jahre</h3>
-                <p>Erfahrung im Web-Development</p>
+             <div class="stat-card">
+                <h3>TUM Alumnus</h3>
+                <p>Maschinenbau & Analytik</p>
             </div>
-            <div class="stat-card">
-                <h3>Design & Code</h3>
-                <p>Eine einzigartige Kombination</p>
+             <div class="stat-card">
+                <h3>Knorr-Bremse</h3>
+                <p>Werkstudent | Praktische Erfahrung</p>
             </div>
         </div>
     </section>
 
     <section id="work" class="project-showcase">
-        <h2>Ausgewählte **Projekte**</h2>
+        <h2>Meine **besten Projekte**</h2>
         <div class="project-grid">
             
             <a href="#" class="project-item project-lg">
-                <span class="project-tag">Web-App</span>
-                <span class="project-title">Startup Dashboard Design</span>
-                </a>
+                <span class="project-tag">Projekt 1</span>
+                <span class="project-title">E-Commerce Redesign</span>
+            </a>
             
             <a href="#" class="project-item project-sm">
-                <span class="project-tag">Branding</span>
-                <span class="project-title">Corporate Identity Relaunch</span>
-                </a>
+                <span class="project-tag">Projekt 2</span>
+                <span class="project-title">App-Entwicklung</span>
+            </a>
             
             <a href="#" class="project-item project-sm">
-                <span class="project-tag">Frontend</span>
-                <span class="project-title">Elegante E-Commerce Landingpage</span>
-                </a>
+                <span class="project-tag">Projekt 3</span>
+                <span class="project-title">Portfolio-Website</span>
+            </a>
             
         </div>
         <div class="all-work">
@@ -64,24 +488,87 @@
 
     <section id="about" class="about-section">
         <div class="about-content">
-            <h2>**Über** Tim</h2>
-            <p>Meine Leidenschaft liegt an der Schnittstelle von Design und Entwicklung. Ich sorge dafür, dass Pixel perfekt sitzen und die Code-Basis gleichzeitig sauber und wartbar ist. Ich arbeite hauptsächlich mit **React, Node.js und modernen CSS-Frameworks**.</p>
-            <p>Derzeit verfügbar für neue Herausforderungen und spannende Kooperationen.</p>
+            <h2>Mein **Werdegang** & meine **Expertise**</h2>
+            
+            <h3>Akademische Fundamente 🎓</h3>
+            <p>Mein Werdegang begann mit einem **Abitur mit Auszeichnung**, was mein Engagement für Präzision und Erfolg unterstreicht. Darauf aufbauend habe ich an der **Technischen Universität München (TUM)** Maschinenbau studiert. Dieses Studium hat mein analytisches Denken geschärft und mir beigebracht, komplexe Probleme strukturiert zu lösen.</p>
+
+            <h3>Praktische Erfahrung & Anwendung ⚙️</h3>
+            <p>Während meines Studiums konnte ich mein theoretisches Wissen als **Werkstudent bei der Knorr-Bremse AG** in München praktisch anwenden. Dort sammelte ich wertvolle Erfahrungen in der industriellen Umgebung und in der Umsetzung technischer Projekte unter realen Bedingungen.</p>
+            
+            <h3>Fähigkeiten & Interessen 💡</h3>
+            <p>Meine Kernkompetenz liegt in der Verknüpfung von **technischer Machbarkeit** und **strategischer Planung**. Ich habe ein starkes Interesse an Datenanalyse, nachhaltiger Technologie und der Optimierung von Prozessen. In meiner Freizeit beschäftige ich mich intensiv mit moderner Frontend-Entwicklung (HTML, CSS, JavaScript) und UI/UX-Design.</p>
         </div>
     </section>
 
     <footer id="contact" class="main-footer">
         <div class="footer-contact">
             <h2>Interessiert? **Lass uns reden.**</h2>
-            <a href="mailto:deine@email.de" class="email-link">deine@email.de</a>
+            <a href="mailto:Ruther.Tim1@gmail.com" class="email-link">Ruther.Tim1@gmail.com</a>
+            
+            <div class="footer-links">
+                <a href="#">LinkedIn</a>
+                <a href="#">Xing</a>
+                <a href="#">GitHub</a>
+            </div>
         </div>
-        <div class="footer-links">
-            <a href="#">LinkedIn</a>
-            <a href="#">Xing</a>
-            <a href="#">GitHub</a>
-        </div>
+        
+        <form id="contact-form" class="contact-form" action="send_email.php" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Nachricht</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">Nachricht senden</button>
+            
+            <div id="form-message" class="form-message" style="display: none;"></div>
+        </form>
     </footer>
+    
+    <script>
+        // Optional: AJAX-Code für eleganteres Formular-Senden
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.style.display = 'none';
+            messageDiv.className = 'form-message'; // Klassen zurücksetzen
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                // Wir erwarten eine JSON-Antwort vom PHP-Skript
+                const result = await response.json();
+                
+                messageDiv.textContent = result.message;
+                messageDiv.style.display = 'block';
 
+                if (result.success) {
+                    messageDiv.classList.add('success');
+                    form.reset(); // Formular bei Erfolg leeren
+                } else {
+                    messageDiv.classList.add('error');
+                }
+                
+            } catch (error) {
+                messageDiv.textContent = 'Ein unerwarteter Fehler ist aufgetreten.';
+                messageDiv.style.display = 'block';
+                messageDiv.classList.add('error');
+            }
+        });
+    </script>
 </body>
 </html>
-          
