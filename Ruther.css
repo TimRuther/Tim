@@ -1,0 +1,323 @@
+/* Globale Einstellungen und Farben */
+:root {
+    --primary-color: #1a1a1a; /* Dunkle Schrift / Hintergrund-Akzent */
+    --accent-color: #007bff;  /* Helle/Mittel Akzentfarbe (wie Blau) */
+    --background-color: #ffffff; /* Weißer, sauberer Hintergrund */
+    --text-color: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Hilfsklasse für Layout-Begrenzung */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* --- HEADER & NAVIGATION --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+.main-nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* --- HERO SECTION (Asymmetrisch) --- */
+.hero-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Asymmetrische Aufteilung */
+    gap: 50px;
+    align-items: flex-start;
+    min-height: 70vh;
+    padding: 80px 5% 100px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.hero-text-content {
+    max-width: 600px;
+}
+
+.tagline {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--primary-color);
+    color: var(--background-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+}
+
+/* Kurzinfo-Karten */
+.hero-visual {
+    padding-top: 50px; /* Vertikaler Ausgleich */
+}
+
+.stat-card {
+    background-color: #f5f5f5; /* Heller grauer Hintergrund */
+    padding: 25px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.stat-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+/* --- PROJECT SHOWCASE --- */
+.project-showcase {
+    padding: 100px 5%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.project-showcase h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 Spalten Standard */
+    gap: 30px;
+}
+
+/* Spezifisches Grid-Layout */
+.project-lg {
+    grid-column: span 2; /* Nimmt die volle Breite ein */
+    min-height: 450px;
+}
+
+.project-sm {
+    min-height: 300px;
+}
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Inhalt am unteren Rand */
+    padding: 30px;
+    background-color: #e8e8e8; /* Grauer Platzhalter für Bilder */
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--background-color); 
+    /* Für den Effekt hier ein Beispiel für ein dunkles Bild-Overlay: */
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-item:hover {
+    transform: scale(1.02); /* Leichter Vergrößerungseffekt */
+}
+
+.project-tag {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.project-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.all-work {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.all-work a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* --- ABOUT SECTION --- */
+.about-section {
+    padding: 100px 5%;
+    background-color: #f5f5f5;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* --- FOOTER / CONTACT --- */
+.main-footer {
+    padding: 80px 5%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.email-link {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+.email-link:hover {
+    color: var(--accent-color);
+}
+
+.footer-links a {
+    margin-left: 20px;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- RESPONSIVITÄT --- */
+@media (max-width: 992px) {
+    .hero-section {
+        grid-template-columns: 1fr; /* Hero wird einspaltig */
+        gap: 30px;
+        padding-top: 50px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-visual {
+        padding-top: 0;
+        display: flex;
+        gap: 20px;
+    }
+    
+    .stat-card {
+        flex: 1;
+    }
+    
+    .main-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-contact {
+        margin-bottom: 30px;
+    }
+    
+    .footer-links a {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .main-nav {
+        margin-top: 15px;
+    }
+    
+    .main-nav a {
+        margin-left: 0;
+        margin-right: 20px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr; /* Projekte werden einspaltig */
+    }
+    
+    .project-lg {
+        grid-column: span 1;
+    }
+    
+    .project-item {
+        min-height: 250px;
+    }
+    
+    .hero-visual {
+        flex-direction: column;
+    }
+}
