@@ -99,7 +99,7 @@ body {
     padding-top: 50px;
 }
 
-/* Styling für das Profilbild (bleibt, falls es später wieder verwendet wird, hat aber keinen Effekt auf den aktuellen HTML-Code) */
+/* Styling für das Profilbild (wird nicht genutzt, da das <img>-Tag entfernt wurde) */
 .profile-picture {
     width: 200px;
     height: 200px;
@@ -147,10 +147,10 @@ body {
     grid-column: span 2;
     min-height: 450px;
     
-    /* Hintergrundbild des Digital Freight Trains */
+    /* Hintergrundbild des Digital Freight Trains. Pfad ist korrekt, da Pictures ein Unterordner ist. */
     background-image: 
         linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
-        url('Pictures/Knorr_DFT.png'); /* LOKALER PFAD VERWENDET */
+        url('Pictures/Knorr_DFT.png');
     background-size: cover;
     background-position: center;
 }
