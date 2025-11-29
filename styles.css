@@ -1,420 +1,434 @@
 :root {
-    --primary-color: #1a1a1a; /* Dunkle Schrift / Hintergrund-Akzent */
-    --accent-color: #007bff;  /* Helle/Mittel Akzentfarbe (wie Blau) */
-    --background-color: #ffffff; /* Weißer, sauberer Hintergrund */
-    --text-color: #333333;
+    --primary-color: #1a1a1a; /* Dunkle Schrift / Hintergrund-Akzent */
+    --accent-color: #007bff;  /* Helle/Mittel Akzentfarbe (wie Blau) */
+    --background-color: #ffffff; /* Weißer, sauberer Hintergrund */
+    --text-color: #333333;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 /* --- HEADER & NAVIGATION --- */
 .main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    letter-spacing: 1px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 1px;
 }
 
 .main-nav a {
-    margin-left: 30px;
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 400;
-    transition: color 0.3s;
+    margin-left: 30px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 400;
+    transition: color 0.3s;
 }
 
 .main-nav a:hover {
-    color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 /* --- HERO SECTION (Asymmetrisch) --- */
 .hero-section {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 50px;
-    align-items: flex-start;
-    min-height: 70vh;
-    padding: 80px 5% 100px;
-    max-width: 1280px;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    align-items: flex-start;
+    min-height: 70vh;
+    padding: 80px 5% 100px;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 .hero-text-content {
-    max-width: 600px;
+    max-width: 600px;
 }
 
 .tagline {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #666;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .hero-section h1 {
-    font-size: 3.5rem;
-    line-height: 1.1;
-    margin-bottom: 30px;
-    font-weight: 600;
-    color: var(--primary-color);
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: var(--primary-color);
 }
 
 .cta-button {
-    display: inline-block;
-    padding: 12px 25px;
-    background: var(--primary-color);
-    color: var(--background-color);
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 4px;
-    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--primary-color);
+    color: var(--background-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .cta-button:hover {
-    background-color: #444;
-    transform: translateY(-2px);
+    background-color: #444;
+    transform: translateY(-2px);
 }
 
 /* Kurzinfo-Karten */
 .hero-visual {
-    padding-top: 50px;
+    padding-top: 50px;
+}
+
+/* NEUE REGEL: Styling für das Profilbild */
+.profile-picture {
+    width: 200px; /* Definierte Größe */
+    height: 200px;
+    object-fit: cover; /* Stellt sicher, dass das Bild den Raum füllt, ohne verzerrt zu werden */
+    border-radius: 50%; /* Rundes Bild */
+    margin-bottom: 30px; /* Abstand zu den Stat-Karten */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .stat-card {
-    background-color: #f5f5f5;
-    padding: 25px;
-    border-radius: 6px;
-    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    padding: 25px;
+    border-radius: 6px;
+    margin-bottom: 20px;
 }
 
 .stat-card h3 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 5px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
 }
 
 /* --- PROJECT SHOWCASE --- */
 .project-showcase {
-    padding: 100px 5%;
-    max-width: 1280px;
-    margin: 0 auto;
+    padding: 100px 5%;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 .project-showcase h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    font-weight: 600;
-    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+    text-align: center;
 }
 
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
 }
 
 /* Spezifisches Grid-Layout */
 .project-lg {
-    grid-column: span 2;
-    min-height: 450px;
+    grid-column: span 2;
+    min-height: 450px;
+    
+    /* Hintergrundbild des Digital Freight Trains */
+    background-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
+        url('Pictures/Knorr_DFT.png'); /* LOKALER PFAD VERWENDET */
+    background-size: cover;
+    background-position: center;
 }
 
 .project-sm {
-    min-height: 300px;
+    min-height: 300px;
 }
 
 .project-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 30px;
-    background-color: #e8e8e8;
-    border-radius: 8px;
-    text-decoration: none;
-    color: var(--background-color); 
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
-    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    background-color: #e8e8e8;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--background-color); 
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
 }
 
 .project-item:hover {
-    transform: scale(1.02);
+    transform: scale(1.02);
 }
 
 .project-tag {
-    font-size: 0.8rem;
-    font-weight: 400;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    opacity: 0.8;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.8;
 }
 
 .project-title {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-top: 5px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 5px;
 }
 
 .all-work {
-    text-align: center;
-    margin-top: 40px;
+    text-align: center;
+    margin-top: 40px;
 }
 
 .all-work a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
 }
 
 /* --- ABOUT SECTION --- */
 .about-section {
-    padding: 100px 5%;
-    background-color: #f5f5f5;
-}
-/* NEUE BILD-STYLING-REGEL */
-.knorr-bremse-image {
-    width: 100%; /* Bild füllt die gesamte Breite des Containers */
-    height: auto;
-    border-radius: 8px;
-    margin-top: 15px;
-    margin-bottom: 25px; /* Abstand zum folgenden Text */
+    padding: 100px 5%;
+    background-color: #f5f5f5;
 }
 
+/* Die knorr-bremse-image Klasse wurde entfernt, da das Bild jetzt im Projektkasten ist */
+/* Falls du sie noch im HTML hattest, entferne sie dort bitte auch. */
+
 .about-content {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .about-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    font-weight: 600;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 600;
 }
 
 .about-content h3 {
-     font-size: 1.6rem;
-     margin-top: 25px;
-     margin-bottom: 10px;
+     font-size: 1.6rem;
+     margin-top: 25px;
+     margin-bottom: 10px;
 }
 
 .about-content p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
 }
 
 /* --- FOOTER / CONTACT & FORM --- */
 .main-footer {
-    padding: 80px 5%;
-    max-width: 1280px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    padding: 80px 5%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .footer-contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    font-weight: 600;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .email-link {
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: color 0.3s;
-    display: block;
-    margin-bottom: 25px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s;
+    display: block;
+    margin-bottom: 25px;
 }
 
 .email-link:hover {
-    color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 .footer-links a {
-    margin-left: 20px;
-    color: #666;
-    text-decoration: none;
-    transition: color 0.3s;
+    margin-left: 20px;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 .footer-links a:hover {
-    color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 /* Kontaktformular Styling */
 .contact-form {
-    width: 45%;
-    max-width: 500px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    width: 45%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .form-group input, .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: border-color 0.3s;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
 }
 
 .form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
+    outline: none;
+    border-color: var(--accent-color);
 }
 
 .form-group textarea {
-    resize: vertical;
-    min-height: 120px;
+    resize: vertical;
+    min-height: 120px;
 }
 
 .submit-btn {
-    background-color: var(--primary-color);
-    color: var(--background-color);
-    border: none;
-    padding: 12px 25px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
 }
 
 .submit-btn:hover {
-    background-color: #444;
+    background-color: #444;
 }
 
 .form-message {
-    margin-top: 15px;
-    padding: 10px;
-    border-radius: 4px;
-    font-weight: 600;
-    text-align: center;
-    display: none;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+    display: none;
 }
 
 .form-message.success {
-    background-color: #e6ffe6;
-    color: #008000;
-    border: 1px solid #008000;
+    background-color: #e6ffe6;
+    color: #008000;
+    border: 1px solid #008000;
 }
 
 .form-message.error {
-    background-color: #ffe6e6;
-    color: #cc0000;
-    border: 1px solid #cc0000;
+    background-color: #ffe6e6;
+    color: #cc0000;
+    border: 1px solid #cc0000;
 }
 
 
 /* --- RESPONSIVITÄT --- */
 @media (max-width: 992px) {
-    .hero-section {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding-top: 50px;
-    }
-    
-    .hero-section h1 {
-        font-size: 2.8rem;
-    }
+    .hero-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-top: 50px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
 
-    .hero-visual {
-        padding-top: 0;
-        display: flex;
-        gap: 20px;
-    }
-    
-    .stat-card {
-        flex: 1;
-    }
-    
-    .main-footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+    .hero-visual {
+        padding-top: 0;
+        display: flex;
+        gap: 20px;
+    }
+    
+    .stat-card {
+        flex: 1;
+    }
+    
+    .main-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-    .footer-contact {
-        width: 100%;
-        margin-bottom: 30px;
-    }
+    .footer-contact {
+        width: 100%;
+        margin-bottom: 30px;
+    }
 
-    .contact-form {
-        width: 100%;
-        max-width: 100%;
-        order: 2;
-    }
-    
-    .footer-links {
-        margin-bottom: 20px;
-    }
+    .contact-form {
+        width: 100%;
+        max-width: 100%;
+        order: 2;
+    }
+    
+    .footer-links {
+        margin-bottom: 20px;
+    }
 
-    .footer-links a {
-        margin: 0 10px;
-    }
+    .footer-links a {
+        margin: 0 10px;
+    }
 }
 
 @media (max-width: 768px) {
-    .main-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .main-nav {
-        margin-top: 15px;
-    }
-    
-    .main-nav a {
-        margin-left: 0;
-        margin-right: 20px;
-    }
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .main-nav {
+        margin-top: 15px;
+    }
+    
+    .main-nav a {
+        margin-left: 0;
+        margin-right: 20px;
+    }
 
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .project-lg {
-        grid-column: span 1;
-    }
-    
-    .project-item {
-        min-height: 250px;
-    }
-    
-    .hero-visual {
-        flex-direction: column;
-    }
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-lg {
+        grid-column: span 1;
+    }
+    
+    .project-item {
+        min-height: 250px;
+    }
+    
+    .hero-visual {
+        flex-direction: column;
+    }
 }
