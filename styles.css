@@ -99,7 +99,7 @@ body {
     padding-top: 50px;
 }
 
-/* Styling für das Profilbild */
+/* Styling für das Profilbild (bleibt, falls es später wieder verwendet wird, hat aber keinen Effekt auf den aktuellen HTML-Code) */
 .profile-picture {
     width: 200px;
     height: 200px;
